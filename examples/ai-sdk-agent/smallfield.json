@@ -1,0 +1,6 @@
+{
+    "project": "ai-sdk-agent",
+    "components": {
+        "chat": { "kind": "web", "dir": ".", "runtime": "node", "path": "/", "port": 8080 }
+    }
+}

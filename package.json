@@ -1,0 +1,29 @@
+{
+    "name": "@thesmallfield/helloworld",
+    "version": "0.0.1",
+    "private": true,
+    "type": "module",
+    "scripts": {
+        "lint": "oxlint . && oxfmt --check .",
+        "format": "oxfmt .",
+        "typecheck": "turbo run typecheck",
+        "build": "turbo run build",
+        "test": "turbo run test",
+        "prepare": "husky"
+    },
+    "devDependencies": {
+        "@commitlint/cli": "21.2.3",
+        "@commitlint/config-conventional": "21.2.3",
+        "@types/node": "26.6.5",
+        "husky": "9.1.7",
+        "oxfmt": "0.72.0",
+        "oxlint": "1.87.0",
+        "turbo": "2.11.7",
+        "typescript": "5.9.3",
+        "vitest": "5.0.3"
+    },
+    "engines": {
+        "node": ">=24.21 <25"
+    },
+    "packageManager": "pnpm@12.10.1"
+}

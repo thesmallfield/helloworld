@@ -1,0 +1,10 @@
+packages:
+    - ui
+    - api1
+    - api2
+    - jobs
+minimumReleaseAgeExclude:
+    - '@types/node@26.6.5'
+overrides:
+    '@thesmallfield/contracts': file:vendor/thesmallfield-contracts-0.0.1.tgz
+    '@thesmallfield/sdk-shared': file:vendor/thesmallfield-sdk-shared-0.0.1.tgz

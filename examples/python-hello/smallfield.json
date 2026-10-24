@@ -1,0 +1,13 @@
+{
+    "project": "python-hello",
+    "components": {
+        "site": {
+            "kind": "web",
+            "dir": ".",
+            "runtime": "python",
+            "start": "gunicorn --bind 0.0.0.0:$PORT --worker-tmp-dir /tmp app:app",
+            "path": "/",
+            "port": 8080
+        }
+    }
+}

@@ -1,0 +1,11 @@
+{
+    "project": "rooms",
+    "components": {
+        "site": { "kind": "web", "dir": ".", "path": "/", "port": 8080 },
+        "report": { "kind": "job", "dir": ".", "command": ["node", "jobs/report.js"] }
+    },
+    "exports": {
+        "orders.read": { "paths": ["GET /api/orders", "GET /api/orders/*"] },
+        "report": { "job": "report", "user": "none" }
+    }
+}

@@ -1,0 +1,24 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>AI SDK agent</title>
+<h1>AI SDK agent</h1>
+<form id="f"><input id="q" size="50" placeholder="What is 12 * 34 + 5?"> <button>Ask</button></form>
+<pre id="out"></pre>
+<script>
+f.onsubmit = async (e) => {
+  e.preventDefault();
+  out.textContent = "";
+  const res = await fetch("api/chat", {
+    method: "POST",
+    headers: { "content-type": "application/json" },
+    body: JSON.stringify({ message: q.value }),
+  });
+  if (!res.ok) { out.textContent = await res.text(); return; }
+  const reader = res.body.pipeThrough(new TextDecoderStream()).getReader();
+  for (;;) {
+    const { value, done } = await reader.read();
+    if (done) break;
+    out.textContent += value;
+  }
+};
+</script>

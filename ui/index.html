@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="/src/style.css" />
+        <title>Small Field helloworld</title>
+    </head>
+    <body>
+        <h1>Small Field helloworld</h1>
+        <p id="me">Checking who you are…</p>
+        <p id="api1">api1: loading</p>
+        <p id="api2">api2: loading</p>
+
+        <section>
+            <h2>Upload a file</h2>
+            <input id="file-input" type="file" />
+            <progress id="upload-progress" max="1" value="0" hidden></progress>
+            <p id="upload-status" class="status"></p>
+        </section>
+
+        <section>
+            <h2>My files</h2>
+            <form id="search-form">
+                <input id="search-input" type="search" placeholder="Search by name" />
+                <button type="submit">Search</button>
+            </form>
+            <ul id="file-list"></ul>
+            <p id="files-status" class="status"></p>
+        </section>
+
+        <section>
+            <h2>Email</h2>
+            <button id="email-button" type="button">Send me an email</button>
+            <p id="email-status" class="status"></p>
+        </section>
+
+        <section>
+            <h2>Rooms (another app)</h2>
+            <button id="rooms-backend" type="button">Via my backend</button>
+            <button id="rooms-direct" type="button">Directly from this page</button>
+            <button id="rooms-report" type="button">Run rooms' report</button>
+            <p id="rooms-status" class="status"></p>
+            <pre id="rooms-result"></pre>
+        </section>
+
+        <script type="module" src="/src/main.ts"></script>
+    </body>
+</html>

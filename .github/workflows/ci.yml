@@ -1,0 +1,26 @@
+name: ci
+
+on:
+    pull_request:
+    push:
+        branches: [main]
+
+jobs:
+    ci:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v5
+              with:
+                  fetch-depth: 0
+            - uses: pnpm/action-setup@v4
+            - uses: actions/setup-node@v5
+              with:
+                  node-version-file: .nvmrc
+                  cache: pnpm
+            - run: pnpm install --frozen-lockfile
+            - run: pnpm lint
+            - run: pnpm typecheck
+            - run: pnpm build
+            - run: pnpm test
+            - if: github.event_name == 'pull_request'
+              run: pnpm commitlint --from origin/main --to HEAD

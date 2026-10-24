@@ -1,0 +1,1 @@
+{ "project": "sample-next-export", "components": { "site": { "kind": "static", "dir": ".", "build": "npm run build", "output": "out" } } }

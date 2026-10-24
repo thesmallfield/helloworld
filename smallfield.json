@@ -1,0 +1,11 @@
+{
+  "project": "helloworld",
+  "components": {
+    "ui":   { "kind": "static", "dir": "ui",   "path": "/",     "build": "pnpm run build", "output": "dist" },
+    "api1": { "kind": "web",    "dir": "api1", "path": "/api1", "port": 8080 },
+    "api2": { "kind": "web",    "dir": "api2", "path": "/api2", "port": 8080 },
+    "cleanup": { "kind": "job", "dir": "jobs", "command": ["node", "cleanup.js"], "schedule": "*/5 * * * *" }
+  },
+  "uses": ["rooms:orders.read", "rooms:report"],
+  "databases": [{ "engine": "postgres" }]
+}

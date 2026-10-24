@@ -1,0 +1,14 @@
+{
+    "$schema": "./node_modules/oxlint/configuration_schema.json",
+    "plugins": ["typescript", "import", "unicorn", "oxc"],
+    "categories": {
+        "correctness": "error",
+        "suspicious": "error"
+    },
+    "rules": {
+        "no-console": "error",
+        "unicorn/require-module-specifiers": "off",
+        "unicorn/filename-case": ["error", { "case": "kebabCase" }]
+    },
+    "ignorePatterns": ["examples/**", "**/dist/**", "**/node_modules/**", "**/.turbo/**"]
+}

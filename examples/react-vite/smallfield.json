@@ -1,0 +1,1 @@
+{ "project": "sample-react", "components": { "web": { "kind": "static", "dir": "web", "build": "npm run build" }, "admin": { "kind": "static", "dir": "admin", "path": "/admin", "build": "npm run build" } } }

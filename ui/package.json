@@ -1,0 +1,18 @@
+{
+    "name": "@thesmallfield/helloworld-ui",
+    "version": "0.0.1",
+    "private": true,
+    "type": "module",
+    "scripts": {
+        "dev": "vite",
+        "build": "vite build",
+        "typecheck": "tsc --noEmit",
+        "test": "vitest run --passWithNoTests"
+    },
+    "dependencies": {
+        "@thesmallfield/web": "file:../vendor/thesmallfield-web-0.0.1.tgz"
+    },
+    "devDependencies": {
+        "vite": "8.3.4"
+    }
+}

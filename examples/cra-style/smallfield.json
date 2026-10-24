@@ -1,0 +1,1 @@
+{ "project": "sample-cra", "components": { "site": { "kind": "static", "dir": ".", "build": "npm run build", "output": "build" } } }

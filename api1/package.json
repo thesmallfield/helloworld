@@ -1,0 +1,19 @@
+{
+    "name": "@thesmallfield/helloworld-api1",
+    "version": "0.0.1",
+    "private": true,
+    "type": "module",
+    "scripts": {
+        "build": "tsc -p tsconfig.json",
+        "typecheck": "tsc --noEmit -p tsconfig.json",
+        "test": "vitest run --passWithNoTests",
+        "start": "node dist/main.js"
+    },
+    "dependencies": {
+        "@thesmallfield/node": "file:../vendor/thesmallfield-node-0.0.1.tgz",
+        "pg": "8.23.1"
+    },
+    "devDependencies": {
+        "@types/pg": "8.23.1"
+    }
+}
