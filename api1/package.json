@@ -10,7 +10,7 @@
         "start": "node dist/main.js"
     },
     "dependencies": {
-        "@thesmallfield/node": "file:../vendor/thesmallfield-node-0.0.1.tgz",
+        "@thesmallfield/node": "0.0.1",
         "pg": "8.23.1"
     },
     "devDependencies": {

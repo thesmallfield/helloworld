@@ -162,10 +162,6 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
-overrides:
-  '@thesmallfield/contracts': file:vendor/thesmallfield-contracts-0.0.1.tgz
-  '@thesmallfield/sdk-shared': file:vendor/thesmallfield-sdk-shared-0.0.1.tgz
-
 importers:
 
   .:
@@ -201,8 +197,8 @@ importers:
   api1:
     dependencies:
       '@thesmallfield/node':
-        specifier: file:../vendor/thesmallfield-node-0.0.1.tgz
-        version: file:vendor/thesmallfield-node-0.0.1.tgz
+        specifier: 0.0.1
+        version: 0.0.1
       pg:
         specifier: 8.23.1
         version: 8.23.1
@@ -218,8 +214,8 @@ importers:
   ui:
     dependencies:
       '@thesmallfield/web':
-        specifier: file:../vendor/thesmallfield-web-0.0.1.tgz
-        version: file:vendor/thesmallfield-web-0.0.1.tgz
+        specifier: 0.0.1
+        version: 0.0.1
     devDependencies:
       vite:
         specifier: 8.3.4
@@ -684,22 +680,12 @@ packages:
     resolution: {integrity: sha512-fCTuZK4QBa+39Oz9l4OGfJfz+GpwCp3AqO7Zch3to99xHPgstVsRFpeQ8LNd2o1Gv8raL2mCFwiaHh7bFSp5DQ==}
     engines: {node: '>=22'}
 
-  '@thesmallfield/contracts@file:vendor/thesmallfield-contracts-0.0.1.tgz':
-    resolution: {integrity: sha512-Rha8pL8gJFAWFXINDB/ETzxftgp7vsFeVjZSo1YIXII150bsaodWKS3Ef9gNZIQyz91vi/PPrs5/EyWFxkH0hQ==, tarball: file:vendor/thesmallfield-contracts-0.0.1.tgz}
-    version: 0.0.1
+  '@thesmallfield/node@0.0.1':
+    resolution: {integrity: sha512-uzhCetGbDZ6MM/kQ3T16DZuxXFLqUVdO9tSGJie8aoX3K0Z6y8okxN2bC4mYL8Keu+HTiiLdrZ69Q+CPD5af0g==}
+    engines: {node: '>=22'}
 
-  '@thesmallfield/node@file:vendor/thesmallfield-node-0.0.1.tgz':
-    resolution: {integrity: sha512-CSxdMfEwLnRQ/6B13qjSlYKWYnHnsMzLHoAvs/3dFuY62ECvMgSfAwoBiaXkQ32db5YY4G7Bbd3T7Wq/KpO7vg==, tarball: file:vendor/thesmallfield-node-0.0.1.tgz}
-    version: 0.0.1
-    engines: {node: '>=20'}
-
-  '@thesmallfield/sdk-shared@file:vendor/thesmallfield-sdk-shared-0.0.1.tgz':
-    resolution: {integrity: sha512-c6eDvtOnCdA22DR5XBAE7C+Joe6cuFoMMpusCr1ckFIBsQWJbG4rWRLyzOEFh9QfN12JXr/kYk40A9qFiUuEQg==, tarball: file:vendor/thesmallfield-sdk-shared-0.0.1.tgz}
-    version: 0.0.1
-
-  '@thesmallfield/web@file:vendor/thesmallfield-web-0.0.1.tgz':
-    resolution: {integrity: sha512-RNSjlUGZfta03uwfGhU8wco6wMCC9HmYwiOKvZJto6P0euAYhb2q83lIuw3k7Dhup4qgTOs906APQw1kDuNk2Q==, tarball: file:vendor/thesmallfield-web-0.0.1.tgz}
-    version: 0.0.1
+  '@thesmallfield/web@0.0.1':
+    resolution: {integrity: sha512-k59HKAiFBjis+YC1OM5SZLqJyrucNDe1O9y4O6xBP1QFN1H9hslXXs617k3Viu9AbFT1eeYQAPGmGkX7gzc/mw==}
 
   '@turbo/darwin-64@2.11.7':
     resolution: {integrity: sha512-Z2LFOxwbiJueD1miByXJS/BrW21vv6YaQXZustty5jEX4vQYw6zyh101Sz1QO7WG0mqBzKagZ/DoAeeujI0/Sw==}
@@ -1673,25 +1659,16 @@ snapshots:
 
   '@simple-libs/stream-utils@2.0.0': {}
 
-  '@thesmallfield/contracts@file:vendor/thesmallfield-contracts-0.0.1.tgz':
+  '@thesmallfield/node@0.0.1':
     dependencies:
+      jose: 6.2.12
+      tus-js-client: 4.3.1
       zod: 4.6.5
 
-  '@thesmallfield/node@file:vendor/thesmallfield-node-0.0.1.tgz':
+  '@thesmallfield/web@0.0.1':
     dependencies:
-      '@thesmallfield/contracts': file:vendor/thesmallfield-contracts-0.0.1.tgz
-      '@thesmallfield/sdk-shared': file:vendor/thesmallfield-sdk-shared-0.0.1.tgz
-      jose: 6.2.12
-
-  '@thesmallfield/sdk-shared@file:vendor/thesmallfield-sdk-shared-0.0.1.tgz':
-    dependencies:
-      '@thesmallfield/contracts': file:vendor/thesmallfield-contracts-0.0.1.tgz
       tus-js-client: 4.3.1
-
-  '@thesmallfield/web@file:vendor/thesmallfield-web-0.0.1.tgz':
-    dependencies:
-      '@thesmallfield/contracts': file:vendor/thesmallfield-contracts-0.0.1.tgz
-      '@thesmallfield/sdk-shared': file:vendor/thesmallfield-sdk-shared-0.0.1.tgz
+      zod: 4.6.5
 
   '@turbo/darwin-64@2.11.7':
     optional: true

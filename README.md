@@ -41,14 +41,4 @@ Without them the page says which one to switch on.
 
 ### Where the SDK comes from
 
-The SDK is not on npm yet, and the Small Field build cannot sign in to GitHub Packages. So the packed SDK
-lives in `vendor/` (`contracts`, `sdk-shared`, `node`, `web`; `vendor/API_COMMIT` says which `api` commit) and
-`api1` and `ui` depend on it with `file:` paths. To update it:
-
-```sh
-scripts/vendor-sdk.sh ../api   # packs the SDK from an api checkout into vendor/
-pnpm install                   # updates pnpm-lock.yaml
-```
-
-When the SDK is on npm, swap the `file:` paths for the version and delete `vendor/` and the `overrides` in
-`pnpm-workspace.yaml`.
+`api1` depends on `@thesmallfield/node` and `ui` on `@thesmallfield/web`, both from npm.

@@ -10,7 +10,7 @@
         "test": "vitest run --passWithNoTests"
     },
     "dependencies": {
-        "@thesmallfield/web": "file:../vendor/thesmallfield-web-0.0.1.tgz"
+        "@thesmallfield/web": "0.0.1"
     },
     "devDependencies": {
         "vite": "8.3.4"
