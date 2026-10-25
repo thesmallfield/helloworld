@@ -28,6 +28,10 @@ Without `DATABASE_URL` it still starts, and `/notes` answers 503.
 The page shows the Small Field SDK at work:
 
 - **Who am I**: the banner at the top comes from `@thesmallfield/web` `sf.identity.me()`.
+- **Roles**: the line under it comes from `GET /api1/whoami`; `api1` reads the person with
+  `sf.identity.fromRequest(req)` from `@thesmallfield/node` and returns `{ email, roles }`.
+- **Health**: `GET /api1/health` answers `{"status":"ok"}` without a sign-in, because `smallfield.json`
+  lists it under `public` for `api1`.
 - **Upload a file**: `sf.files.upload(file, { onProgress })` sends the file straight from the browser to
   `files.<apps domain>` with a progress bar.
 - **My files**: `sf.files.search({ owner: 'me', q })` lists your files. **Download** asks for a 5-minute link
