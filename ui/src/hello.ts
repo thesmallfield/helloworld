@@ -10,3 +10,17 @@ export async function showHello(name: string): Promise<void> {
         element.textContent = `${name}: unreachable`;
     }
 }
+
+export async function showWhoami(): Promise<void> {
+    const element = document.getElementById('whoami');
+    if (!element) return;
+    try {
+        const response = await fetch('/api1/whoami');
+        const body = await response.json();
+        element.textContent = response.ok
+            ? `api1 sees ${body.email} with roles: ${body.roles.join(', ') || 'none'}`
+            : `api1: ${body.error ?? response.status}`;
+    } catch {
+        element.textContent = 'api1: unreachable';
+    }
+}

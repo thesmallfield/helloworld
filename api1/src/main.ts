@@ -1,7 +1,8 @@
 import { createServer, type IncomingMessage } from 'node:http';
-import { sendMeEmail, type Reply } from './email.js';
+import { sendMeEmail, smallField, type Reply } from './email.js';
 import { Notes } from './notes.js';
 import { roomsOrders, roomsReportStart, roomsReportStatus } from './rooms.js';
+import { health, whoami } from './whoami.js';
 
 const SERVICE = 'api1';
 const MAX_BODY_BYTES = 10_000;
@@ -37,6 +38,12 @@ async function addNote(store: Notes, req: IncomingMessage): Promise<Reply> {
 async function route(req: IncomingMessage): Promise<Reply> {
     if (req.method === 'GET' && req.url === '/hello') {
         return { status: 200, body: { service: SERVICE, message: `hello from ${SERVICE}` } };
+    }
+    if (req.method === 'GET' && req.url === '/health') {
+        return health();
+    }
+    if (req.method === 'GET' && req.url === '/whoami') {
+        return whoami(req, smallField()?.identity);
     }
     if (req.method === 'POST' && req.url === '/email') {
         return sendMeEmail(req);
