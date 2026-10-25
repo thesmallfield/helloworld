@@ -6,5 +6,8 @@ function say(message) {
 }
 
 say(`${job} started, run ${runId}`);
+if (process.env.SF_JOB_INPUT) {
+    say(`input ${process.env.SF_JOB_INPUT}`);
+}
 say('nothing to clean up');
 say(`${job} finished, run ${runId}`);
