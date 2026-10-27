@@ -1,7 +1,15 @@
 import { createServer } from 'node:http';
 import { bookings } from './bookings.js';
 
-const header = JSON.parse(process.env.PLATFORM_NAMES ?? '{"header":"x-smallfield"}').header;
+function platformNames() {
+    try {
+        return { env: 'SMALLFIELD', header: 'x-smallfield', ...JSON.parse(process.env.PLATFORM_NAMES ?? '{}') };
+    } catch {
+        return { env: 'SMALLFIELD', header: 'x-smallfield' };
+    }
+}
+
+const { header } = platformNames();
 
 // The gate already verified this token before the request reached the app, so only the claims are read here.
 function emailOf(req) {

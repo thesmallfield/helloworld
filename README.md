@@ -27,7 +27,7 @@ Without `DATABASE_URL` it still starts, and `/notes` answers 503.
 
 A deploy sets `PLATFORM_NAMES` on every app, for example `{"env":"SMALLFIELD","header":"x-smallfield","manifest":["smallfield.json"]}`.
 A white-labelled install has other values (say `APP_FOUNDRY` and `x-app-foundry`), so do not write `smallfield` into code.
-Read `env` for the variable prefix (`${env}_API_URL`) and `header` for the header prefix (`${header}-token`).
+Read `env` for the variable prefix (`${env}_API_URL`; on a default install the job, files and auth variables start with `SF_`, not `SMALLFIELD_`) and `header` for the header prefix (`${header}-token`).
 `@thesmallfield/node` reads it for you; `api1/src/email.ts` and `examples/rooms/server.js` show the plain way.
 
 ## SDK demo
