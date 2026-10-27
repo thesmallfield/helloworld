@@ -23,6 +23,13 @@ Open http://localhost:5173. The dev server proxies `/api1` and `/api2` to the tw
 creates the `notes` table on start and serves `GET /notes` and `POST /notes` (`{"text":"first"}`).
 Without `DATABASE_URL` it still starts, and `/notes` answers 503.
 
+## Platform names
+
+A deploy sets `PLATFORM_NAMES` on every app, for example `{"env":"SMALLFIELD","header":"x-smallfield","manifest":["smallfield.json"]}`.
+A white-labelled install has other values (say `APP_FOUNDRY` and `x-app-foundry`), so do not write `smallfield` into code.
+Read `env` for the variable prefix (`${env}_API_URL`) and `header` for the header prefix (`${header}-token`).
+`@thesmallfield/node` reads it for you; `api1/src/email.ts` and `examples/rooms/server.js` show the plain way.
+
 ## SDK demo
 
 The page shows the Small Field SDK at work:
