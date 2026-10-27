@@ -11,9 +11,19 @@ const EMAIL_OFF =
 
 let client: SmallFieldClient | null = null;
 
-// A deploy hands api1 its SMALLFIELD_* settings when Email, Files or Uses (other apps) is on.
+function platformNames(): { env: string } {
+    try {
+        return { env: 'SMALLFIELD', ...JSON.parse(process.env.PLATFORM_NAMES ?? '{}') };
+    } catch {
+        return { env: 'SMALLFIELD' };
+    }
+}
+
+const names = platformNames();
+
+// A deploy hands api1 its platform settings when Email, Files or Uses (other apps) is on.
 export function smallField(): SmallFieldClient | null {
-    if (!process.env.SMALLFIELD_API_URL) {
+    if (!process.env[`${names.env}_API_URL`]) {
         return null;
     }
     client ??= createClient();
